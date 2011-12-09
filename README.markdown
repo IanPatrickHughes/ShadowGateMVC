@@ -1,5 +1,4 @@
 ShadowGateMVC | An ASP.NET MVC 3 and jQuery Port of the NES Classic
-
 ===============================================================================
 
 What?
