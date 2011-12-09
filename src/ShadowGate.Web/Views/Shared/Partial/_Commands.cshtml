@@ -1,0 +1,80 @@
+﻿@model ShadowGate.Core.Model.Game
+<div id="move-commands">
+    <div id="move-control">
+        <div class="command-button" id="cmd-move"></div>
+        <h3 class="command-title">move</h3>
+    </div>
+    <div id="move-control-window">
+        <div id="move-control-inner-window"></div>
+    </div>
+    <div class="spacer"></div>  
+</div>
+<div id="game-commands">
+    <div class="command-row">
+        <div class="command-item">
+                <div class="command-button" id="cmd-look"></div>
+                <h3 class="command-title">look</h3>
+        </div>
+        <div class="command-item">
+            <div class="command-button" id="cmd-take"></div>
+            <h3 class="command-title">take</h3>
+        </div>
+    </div>
+    <div class="command-row">
+        <div class="command-item">
+                <div class="command-button" id="cmd-open"></div>
+                <h3 class="command-title">open</h3>
+        </div>
+        <div class="command-item">
+                <div class="command-button" id="cmd-close"></div>
+                <h3 class="command-title command-title-small">close</h3>
+        </div>
+    </div>
+    <div class="command-row">
+        <div class="command-item">
+                <div class="command-button" id="cmd-use"></div>
+                <h3 class="command-title">use</h3>
+        </div>
+        <div class="command-item">
+                <div class="command-button" id="cmd-hit"></div>
+                <h3 class="command-title">hit</h3>
+        </div>
+    </div>
+    <div class="command-row">
+        <div class="command-item">
+                <div class="command-button" id="cmd-leave"></div>
+                <h3 class="command-title command-title-small">leave</h3>
+        </div>
+        <div class="command-item">
+                <div class="command-button" id="cmd-speak"></div>
+                <h3 class="command-title command-title-small">speak</h3>
+        </div>
+    </div>    
+    <div class="spacer"></div>
+</div>
+<div id="card-commands">
+    <div id="header"><h3 class="command-title">card</h3></div>
+    <div id="card-commands-container">
+        <div id="card-commands-shuffler">
+            <div class="command-row" id="row-cardup">
+                <div class="command-button-special" id="cmd-cardup"></div>
+                <div id="card-commands-shuffler-up"></div>
+            </div>
+            <div class="command-row" id="row-carddown">
+                    <div class="command-button-special" id="cmd-carddown"></div>
+                    <div id="card-commands-shuffler-down"></div>
+            </div>
+        </div>
+        <div class="card-commands-spacer"></div>
+    </div>
+    <div id="card-commands-lower">
+        <div class="command-row" id="card-commands-lower-first">
+                <div class="command-button-special" id="cmd-self"></div>
+                <h3 class="command-title">self</h3>
+        </div>
+            <div class="command-row">
+                <div class="command-button-special" id="cmd-save"></div>
+                <h3 class="command-title">save</h3>
+        </div>
+    </div>
+</div>

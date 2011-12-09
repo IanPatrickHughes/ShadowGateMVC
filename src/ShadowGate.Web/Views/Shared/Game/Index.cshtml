@@ -1,0 +1,42 @@
+﻿@model ShadowGate.Core.UI.Model.GameView
+@{
+    ViewBag.Title = "Shadowgate";
+    Layout = "~/Views/Shared/_PublicGame.cshtml";
+    var game = Model.game;
+    var items = 6;
+    var iCount = 1;
+}
+<div id="game-frame">
+    <div id="game-play-window">
+        <canvas id="game-play-canvas" width="350" height="350"><p>Your browser does not support the canvas element. So, you can't play Shadowgate MVC, I'm afraid.</p></canvas>
+    </div>
+    <div id="game-items-window">
+       @{
+            Html.RenderPartial(string.Format("~/Views/Shared/Partial/_ItemsList.cshtml"), game);
+        }
+    </div>
+    <div id="game-status-window">
+        @{
+            Html.RenderPartial(string.Format("~/Views/Shared/Partial/_Commands.cshtml"), game);
+        }
+    </div>
+    <div id="game-status-window-messenger">
+        <div id="game-status-window-messenger-inner">
+            @for (var i = 1; i < items; i++)
+            {
+                iCount = iCount == 1 ? 2 : 1;
+                <div class="line-feed-@iCount"></div>
+            }
+        </div>
+    </div>  
+    @{
+        if (game.IsTest)
+        {
+            Html.RenderPartial(string.Format("~/Views/Shared/Partial/_TestButtons.cshtml"), game);
+        } 
+     }
+</div>
+
+<script id="listTemplate" type="text/html">
+    <li><div class="line-item"><div class="command-button-item" id="cmd-${Type}"></div><h3 class="command-title">${Type}</h3></div></li>
+</script>

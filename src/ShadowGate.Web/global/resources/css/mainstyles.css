@@ -1,0 +1,471 @@
+﻿@font-face {
+    font-family: 'shadowgate';
+    src: url('../fonts/shadowgate-webfont.eot');
+    src: url('../fonts/shadowgate-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/shadowgate-webfont.woff') format('woff'),
+         url('../fonts/shadowgate-webfont.ttf') format('truetype'),
+         url('../fonts/shadowgate-webfont.svg#pixshadowgateRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*----------------------------------------------------------
+	Primary ShadowGate Styles (based off of NES version)
+----------------------------------------------------------*/
+body {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	color: #fff;
+	font-family: 'shadowgate', Fallback, sans-serif;
+	font-size:14px;
+	letter-spacing:2px;
+	cursor: url('../images/hand_icon.gif'), auto;
+	margin:0;
+}
+#main-container
+{
+	margin:40px auto 0 auto;	
+	text-align: center;
+}
+#game-container 
+{
+	width:760px !important;	
+	height:825px !important;
+}
+/* For the Pre-loading page stuff */
+#loading-container
+{
+	height:450px;
+	width:500px;
+	margin: 0 auto 0 auto;
+	background:#000 url(../images/game_title_screen.png) no-repeat 5px 10px;
+	position: relative;
+	display: none;
+}
+#boot-screen
+{
+	height:450px;
+	width:500px;
+	margin: 0 auto 0 auto;
+	position: relative;
+	text-align: center;
+}
+	#boot-screen-title { background: #000 url(../images/rooms/intro/boot_title.jpg) no-repeat top left;height: 130px;width: 355px;
+		position: absolute;top:105px;left:65px;  
+	                    }
+	#boot-screen-copy {
+		background: #000 url(../images/rooms/intro/boot_copy.jpg) no-repeat top left;height: 70px;width: 470px;
+		position: absolute;bottom: 10px;left: 15px;
+	}
+#loading {
+	position: absolute;
+	width: 150px;
+	height:45px;
+	top:230px;
+	left:175px;
+}
+	#loading h3 { color: #fff;padding: 0;margin:10px 0 0 0;}
+	#loading-bar 
+	{
+			position: relative; 
+			left : 0px;
+			height: 16px; 
+			width: 0px; 
+			background:url("../images/sword-icon.gif");	
+	}
+	#press-start-screen 
+	{
+			position: absolute;
+			width: 150px;
+			height:45px;
+			top:230px;
+			left:175px;
+			display: none;
+	} 
+	#saved-gameslist-screen 
+	{
+			position:absolute;
+			width:150px;
+			height:110px;
+			top:205px;
+			left:175px;
+			display: none;
+	}
+		.saved-gameitem 
+		{
+			height:30px;
+			width:148px;
+			margin-bottom:2px;
+			text-align:right;
+			padding:5px 0 0 0;
+		}
+			.saved-gameitem-ordinal h3 { padding:0;margin:0;}
+			.saved-gameitem-title h3 {padding:0;margin:0;font-size:12px;}
+		.saved-gameitem:hover
+		{
+			background: #000 url("../images/sword-icon.gif")no-repeat top left;
+		}
+		.saved-gameitem-title {
+			
+		}
+/* The NORMAL Game Play Area */
+	#game-frame
+	{
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+	#game-play-window {
+		width:400px;
+		height:400px;
+		position: absolute;
+		top:0;
+		left:0;
+		background: url(../images/game_window_bg.gif);
+	}
+		#game-play-window p
+		{
+			font-family: arial, helvetica, sans-serif;
+			font-size: 14px;
+			color: #000;
+			display: block;
+			background-color: #fff;
+			margin-top: 100px;
+		}
+		#game-play-canvas 
+		{
+			position:absolute;
+			top:25px;left:25px;
+			z-index:999;
+			background-color: #000;
+		}
+	#game-items-window
+	{
+		width:340px;
+		height:400px;
+		position: absolute;
+		top:0;
+		right:0;
+		background: url(../images/game_items_bg.gif) no-repeat top left;
+	}
+		#current-list-items{width:338px;position:relative;}
+		#current-list-header {
+			height:55px;text-align:left;
+			background: url(../images/status/line_separator_listheader.gif) no-repeat 48px 52px;
+		}
+			#torch1, #torch2
+			{
+				width:35px;height:95px;position: absolute;
+				background: url(../images/torch.gif) no-repeat 10px 40px;
+			}
+			#torch1
+			{
+				top:9px;left:19px;
+			}	
+			#torch2
+			{
+				top:9px;right:18px;
+			}	
+				.flame-left
+				{
+					background: url(../images/flame_left.gif) no-repeat top left;
+					position: absolute;top:0;left:0;right:0;height:50px;
+				}
+				.flame-right
+				{
+					background: url(../images/flame_right.gif) no-repeat top left;
+					position: absolute;top:0;left:0;right:0;height:50px;
+				}
+			#current-list-header h3 {
+				font-size:24px;
+				position: absolute;
+				top: 0;left:75px;
+				color:#000;
+			}
+		#current-list-container
+		{
+			width:310px;
+			height:335px;
+			display:block;
+			position:absolute;
+			left:12px;
+			top:60px;
+			background: url(../images/list_items_bg.gif) no-repeat 0px 7px;
+		}	
+			ul#current-list
+			{
+				padding:1px 0 0 0;
+				margin:0;	
+				width:310px;
+				height:335px;
+				padding-left:30px;
+			}	
+				ul#current-list li
+				{
+					display:block;
+					height:47px;
+					width:250px;
+					position: relative;
+					margin: 0;padding:0;
+				}
+				ul#current-list li .line-item
+				{
+					position: absolute;
+					top:11px;
+					left:4px;
+				}
+					ul#current-list li .line-item h3
+					{
+						padding-top:4px;
+					}
+			
+	#game-status-window
+	{
+		width:758px;
+		height:250px;
+		position: absolute;
+		top:420px;
+		right:0;
+		background: url(../images/game_status_bg.gif) no-repeat top left;
+		z-index: 10;
+	}
+/* GAME MESSENGER AND COMMAND WINDOW */
+		#game-status-window-messenger
+		{
+			width:758px;
+			height:250px;
+			position: absolute;
+			top:420px;
+			right:0;
+			background-color:#ffe3ab;
+			z-index:9;
+			overflow: hidden;
+			position: relative;
+		}
+			#game-status-window-messenger-inner
+			{
+				overflow: hidden;
+				position: absolute;
+				top:5px;bottom:3px;left:25px;right:25px;
+			}
+			.line-feed-1, .line-feed-2
+			{
+				height:55px;
+				margin-bottom: 2px;
+			}
+				.line-feed-1
+				{
+					background: url(../images/status/line_separator_2.gif) repeat-x top left;
+				}
+				.line-feed-2
+				{
+					background: url(../images/status/line_separator_1.gif) repeat-x top left;
+				}
+	/* Commands */	
+		div.command-button, div.command-button-on, div.command-button-special {
+			width:24px;
+			height:23px;
+			display:inline-block;
+			float: left;
+			background:#000 url(../images/commands/cmd_lrg.gif) no-repeat 3px 3px;
+		}
+		.command-button-item {
+			width:23px;
+			height:24px;
+			display:inline-block;
+			float: left;
+		}	
+			div.command-button-on, div.command-button-item-on
+			{
+				background: #000 url(../images/black_square.gif) repeat !important;
+			}
+		
+		h3.command-title {
+			color: #000;
+			float: left;
+			padding:2px 0 0 5px;
+			font-size:20px;
+			margin: 0;
+		}
+			h3.command-title-small
+			{
+				font-size:20px !important;
+				letter-spacing:-1px !important;
+			}
+		#game-status-window-commands {
+			position: relative;
+		}
+			#move-commands {
+				width:180px;height:205px;
+				position: absolute;top:25px;left:35px;
+			}
+				#move-control {
+					height:25px;width:140px;display: block;
+					position: absolute;top: 0px;left: 0;
+					padding-left: 10px;
+					}
+				#move-control-window {
+					width: 125px;height: 145px;
+					position: absolute;
+					top: 35px;width:150px;
+					background: url(../images/commands/command_window_border.gif) no-repeat top left; 
+				}	
+				#move-control-inner-window {
+					position: absolute;
+					top:12px;
+					left:12px;
+					right:12px;
+					bottom:12px;
+					background-image: url(../images/game_window_bg.gif);
+				}
+			#move-commands .spacer, #game-commands .spacer {
+				width: 10px;
+				display: inline-block;
+				top: 0px;
+				bottom: 0px;
+				right: 0px;
+				position: absolute;
+				background:url(../images/commands/command_spacer.gif) no-repeat top left;
+			}
+		#game-commands
+		{
+			position: absolute;top:25px;left:240px;
+			height:180px;
+			width:340px;
+			padding-top:25px;
+		}	
+			.command-row
+			{
+				width:100%;
+				height:40px;
+			}
+			.command-item
+			{
+				float:left;
+				display:inline-block;
+				width:140px;
+				height:38px;
+				padding: 0 20px 0 0;
+			}
+			
+		#card-commands 
+		{
+			position:absolute;top:25px;left:605px;
+			height:205px;
+			width:130px;
+		}
+			#card-commands #header
+			{
+				text-align:right;
+				float: right;
+			}
+			#card-commands-container
+			{
+				position: absolute;
+				width:128px;
+				height:90px;
+				top:25px;
+				background: url(../images/commands/shuffle_bg.gif) no-repeat 60px 25px;
+			}
+				#card-commands-shuffler
+				{
+					position: absolute;
+					top: 0;
+					bottom: 3px;
+					left: 0;
+					width:52px;
+				}
+					
+					#card-commands-shuffler div.command-row
+					{
+						width: 100%;
+						height: 24px;
+						width:50px;
+					}
+					#card-commands-shuffler-up, #card-commands-shuffler-down
+					{
+						display:inline-block;
+						float:left;
+						height:22px;
+						width:22px;
+						margin-left:3px;
+					} 
+					#row-cardup{ position: absolute;top: 3px;}
+					#row-carddown{ position: absolute;bottom: 3px;}
+					#card-commands-shuffler-up
+					{
+						background: url(../images/commands/arrow_up.gif) no-repeat top left;
+					}
+					#card-commands-shuffler-down
+					{
+						background: url(../images/commands/arrow_down.gif) no-repeat top left;
+					}
+			#card-commands-lower 
+			{
+				position: absolute;
+				height:80px;
+				top:115px;
+				width:128px;
+				padding: 10px 0 0 0;
+			}
+				#card-commands-lower-first
+				{
+					background:url(../images/commands/card_spacer.gif) no-repeat 0 30px;
+					margin-bottom:7px;
+				}
+				#card-commands-lower h3
+				{
+					padding:0 0 0 5px;
+					letter-spacing:0px;
+				}
+			.card-commands-spacer
+			{
+				background: url(../images/commands/card_spacer.gif) repeat-x;
+				height: 3px;
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				width: 130px;
+			}
+			
+		
+/* Just for Lower Testing Area */	
+   #game-test-buttons 
+	{
+		position:absolute;
+		top:690px;
+		width:758px;
+		height:150px;
+		background-color: #fff;
+   		color: #000;
+   	font-family: arian, sans-serif;
+	}
+		#game-test-buttons div
+		{
+			border-right:dotted 1px #ff0000;
+			float: left;
+			font: normal 10px arial, sans-serif;
+			display: inline-block;
+			height: 128px;
+			width: 250px;
+			text-align: left;
+			padding: 10px;
+		}
+			#game-test-buttons div .button
+			{
+				padding:3px 10px 3px 10px;
+				border: solid 1px #000;
+				background-color:#ffe3ab;
+				margin-bottom: 3px;
+			}
+			#game-test-buttons div .button:hover {
+				text-decoration: none;
+				color:#ff0000;
+				cursor: url('../images/hand_icon.gif'), auto;
+			}
+			#game-test-buttons div .button:active {
+				position: relative;
+				top: 1px;
+			}

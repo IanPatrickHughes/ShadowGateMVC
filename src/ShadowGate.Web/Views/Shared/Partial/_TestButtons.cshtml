@@ -1,0 +1,16 @@
+﻿@model ShadowGate.Core.Model.Game
+<div id="game-test-buttons">  
+    <div>
+      <h2>ShadowGate Testing</h2>
+      <p><strong>Game Id:</strong> @Model.GameId</p>
+      <p id="game-test-buttons-output"></p>
+    </div>         
+    <div>
+        <form id="frm-test-game-list-items">
+	        <input type="submit" value="get goods list" class="button"/>
+        </form>
+        <input type="button" value="draw to canvas" class="button" id="frm-test-game-canvas-btn" />
+        <input type="button" value="switch ctl pnl" class="button" id="frm-test-game-control-window" />
+        <input type="button" value="torch" class="button" id="frm-test-game-control-torch" />
+    </div>
+</div>

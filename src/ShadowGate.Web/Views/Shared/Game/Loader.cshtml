@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Shadowgate is loading...";
+    Layout = "~/Views/Shared/_PublicGame.cshtml";
+}
+    <div id="boot-screen">
+        <div id="boot-screen-title"></div>
+        <div id="boot-screen-copy"></div>
+    </div>
+    <div id="loading-container">
+        <div id="loading">
+            <div id="loading-bar"></div>
+            <h3>Loading ...</h3>
+        </div>
+        <div id="press-start-screen">
+             <h3>click here to start</h3>
+        </div>
+        <div id="saved-gameslist-screen">
+            <div class="saved-gameitem" id="gameitem-1">
+                <div class="saved-gameitem-ordinal"><h3>file 1</h3></div>
+                <div class="saved-gameitem-title"><h3>12.12.12</h3></div>
+            </div>
+            <div class="saved-gameitem" id="gameitem-2">
+                <div class="saved-gameitem-ordinal"><h3>file 2</h3></div>
+                <div class="saved-gameitem-title"><h3>new</h3></div>
+            </div>
+            <div class="saved-gameitem" id="gameitem-3">
+                <div class="saved-gameitem-ordinal"><h3>file 3</h3></div>
+                <div class="saved-gameitem-title"><h3>new</h3></div>
+            </div>
+        </div>
+    </div>
+@section CustomScripts
+{
+    <script type="text/javascript" language="javascript">
+        (function ($) {
+            var game = new ShadowGateGame();
+            game.init();
+            game.loadGameSoundFx();
+
+            $("#boot-screen").fadeOut(2400, function () {
+                $(this).remove();
+                $("#loading-container").fadeIn(1000, function () {
+                    soundManager.onready(function () {
+                        $.playground().startGame(function () {
+                            //#2 At the start screen start intro song
+                            soundFxList.introSng.play();
+                            showStartScreen();
+                        });
+                    });
+
+                });
+            });
+            //Starts up the start screen and waits for click.
+            function showStartScreen() {
+                $("#loading").fadeOut(300);
+                $("#press-start-screen").fadeIn(600);
+                $("#press-start-screen").click(function () {
+                    $(this).remove();
+                    showGameLists();
+                });
+            }
+            //Show the Game Lists.
+            function showGameLists() {
+                $("#saved-gameslist-screen").fadeIn(600);
+            }
+            $(".saved-gameitem").click(function () {
+                var saveId = $(this).attr('id');
+                var saveOrdinal = (saveId.replace("gameitem-", "")) * 1;
+
+                //to-do construct player logic here and set into game cookie
+
+                //to-do stop the current tune playing
+                $(location).attr('href', siteGamePlayUrl);
+
+
+            });
+
+        })(jQuery);
+    </script>
+}

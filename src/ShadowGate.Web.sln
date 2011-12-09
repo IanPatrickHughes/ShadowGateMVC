@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowGate.Web", "ShadowGate.Web\ShadowGate.Web.csproj", "{0F75723A-C2F8-4B54-861B-16E845AFBBD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowGate.Core", "ShadowGate.Core\ShadowGate.Core.csproj", "{EEEF29AC-D92B-416F-B24D-59A13036B7FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShadowGate.Web.Tests", "ShadowGate.Web.Tests\ShadowGate.Web.Tests.csproj", "{4A03D267-4D38-4C49-9A41-4A52E3F62E24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F75723A-C2F8-4B54-861B-16E845AFBBD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F75723A-C2F8-4B54-861B-16E845AFBBD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F75723A-C2F8-4B54-861B-16E845AFBBD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F75723A-C2F8-4B54-861B-16E845AFBBD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEEF29AC-D92B-416F-B24D-59A13036B7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEEF29AC-D92B-416F-B24D-59A13036B7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEEF29AC-D92B-416F-B24D-59A13036B7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEEF29AC-D92B-416F-B24D-59A13036B7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A03D267-4D38-4C49-9A41-4A52E3F62E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A03D267-4D38-4C49-9A41-4A52E3F62E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A03D267-4D38-4C49-9A41-4A52E3F62E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A03D267-4D38-4C49-9A41-4A52E3F62E24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
