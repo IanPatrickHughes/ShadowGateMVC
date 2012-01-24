@@ -8,16 +8,16 @@
     //Public
     return {
 
-        drawLevel: function (room) {
+        drawLevel: function (roomId) {
             try {
 
-                switch (room) {
+                switch (roomId) {
                     case 1:
-                            var room = new Room1();
-                            room.drawLevel();
+                        var newRoom = new Room1();
+                        newRoom.drawLevel();
                         break;
                     default:
-                            alert("Not a room!");
+                        alert("Not a room!");
                         break;
                 }
 

@@ -131,7 +131,6 @@ function ShadowGateGame() {
     }
     //Private Torch Methods
     function lightTorchById(torchId) {
-        gameCurrentTorchId = torchId;
         switch (torchId) {
             case 1:
                 setInterval(igniteTorch, 2);
@@ -213,13 +212,12 @@ jQuery(function () {
     $("#current-list").delegate("li", "click", function () {
 
         var currentAction = $.cookie(cookieCurrentCommand);
-        if (currentAction != "")
-            {
-                var id = $(this).children(".line-item").children(".command-button-item").attr("id");
-                $("#current-list").find(".command-button-item").removeClass("command-button-item-on");
-                $(this).children(".line-item").children(".command-button-item").addClass("command-button-item-on");
-                $.cookie(cookieCurrentObject, id, { expires: null });
-            }
+        if (currentAction != "") {
+            var id = $(this).children(".line-item").children(".command-button-item").attr("id");
+            $("#current-list").find(".command-button-item").removeClass("command-button-item-on");
+            $(this).children(".line-item").children(".command-button-item").addClass("command-button-item-on");
+            $.cookie(cookieCurrentObject, id, { expires: null });
+        }
     });
     //--------END GAME ITEMS--------\\  
     //--------TEST ITEMS--------\\    
@@ -230,21 +228,24 @@ jQuery(function () {
         return false;
     });
     $("#frm-test-game-control-torch").click(function () {
+        window.gameCurrentTorchId = 1;
         game.lightTorch(1);
         return false;
     });
 
-    //::: CANVAS ITEMS :::\\
-    $("#frm-test-game-canvas-btn").click(function () {
-        var room = new ShadowGateRoom();
-        var roomId = 1;
-        room.drawLevel(roomId);
-        return false;
-    });
-
+  
     //::: CONTROL ITEMS :::\\
     $("#frm-test-game-control-window").click(function () {
         game.swapCommandWindows();
+    });
+
+    //::: ROOM ITEMS :::\\
+    $("#frm-test-game-load-room").click(function () {
+        var val = $("#frm-test-room-number").val();
+        var room = new ShadowGateRoom();
+        var roomId = parseInt(val);
+        room.drawLevel(roomId);
+        
     });
 
     //--------END TEST ITEMS--------\\   

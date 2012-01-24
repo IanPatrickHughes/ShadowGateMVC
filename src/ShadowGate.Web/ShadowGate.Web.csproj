@@ -113,6 +113,10 @@
     <Content Include="global\resources\images\list_items_bg.gif" />
     <Content Include="global\resources\images\rooms\intro\boot_copy.jpg" />
     <Content Include="global\resources\images\rooms\intro\boot_title.jpg" />
+    <Content Include="global\resources\images\rooms\room_1_entrance\door_open.gif" />
+    <Content Include="global\resources\images\rooms\room_1_entrance\key_1.gif" />
+    <Content Include="global\resources\images\rooms\room_1_entrance\room_background.gif" />
+    <Content Include="global\resources\images\rooms\room_1_entrance\skull.gif" />
     <Content Include="global\resources\images\status\line_separator_1.gif" />
     <Content Include="global\resources\images\status\line_separator_2.gif" />
     <Content Include="global\resources\images\status\line_separator_listheader.gif" />

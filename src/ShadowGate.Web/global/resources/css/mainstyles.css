@@ -136,9 +136,8 @@ body {
 		#game-play-canvas 
 		{
 			position:absolute;
-			top:25px;left:25px;
+			top:0px;left:0px;
 			z-index:999;
-			background-color: #000;
 		}
 	#game-items-window
 	{
